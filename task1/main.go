@@ -22,7 +22,6 @@ type ParsedJsonData struct {
 
 func main() {
 	argsWithoutProc := os.Args[1:]
-	_ = argsWithoutProc
 	argc := len(argsWithoutProc)
 	if argc != 1 {
 		fmt.Println(UsageInformation)
@@ -37,9 +36,8 @@ func main() {
 	client := &http.Client{}
 	url := fmt.Sprintf("https://api.github.com/repos/%s", repo_name)
 	method := "GET"
-	payload := strings.NewReader(``)
 
-	req, err := http.NewRequest(method, url, payload)
+	req, err := http.NewRequest(method, url, nil)
 	if err != nil {
 		log.Fatal(err)
 		return
@@ -59,7 +57,7 @@ func main() {
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println("Error reading response body:", err)
+		log.Fatal(err)
 		return
 	}
 
