@@ -1,3 +1,3 @@
-module github.com/Danil-Zaripov/golang-course/task1
+module github.com/Danil-Zaripov/golang-course/project
 
 go 1.25.0

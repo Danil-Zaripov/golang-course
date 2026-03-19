@@ -35,9 +35,8 @@ func main() {
 	}
 	client := &http.Client{}
 	url := fmt.Sprintf("https://api.github.com/repos/%s", repo_name)
-	method := "GET"
 
-	req, err := http.NewRequest(method, url, nil)
+	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		log.Fatal(err)
 		return
