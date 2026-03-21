@@ -1,0 +1,40 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Gets some repository data from github api",
+        "title": "GitHub Repo fetcher API",
+        "contact": {},
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:50031",
+    "paths": {
+        "/api/repo/{owner}/{name}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetch repo information",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Owner",
+                        "name": "owner",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Name",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

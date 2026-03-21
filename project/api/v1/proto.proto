@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api.v1;
+
+option go_package = "github.com/Danil-Zaripov/golang-course/project/api/v1";
+
+service Collector {
+  rpc GetRepoData(RepoRequest) returns (RepoReply) {}
+}
+
+message RepoRequest {
+  string owner = 1;
+  string name = 2;
+}
+
+message RepoReply {
+  string fullname = 1;
+  string desc = 2;
+  int32 forks_count = 3;
+  int32 stars_count = 4;
+  string created_at = 5;
+}
