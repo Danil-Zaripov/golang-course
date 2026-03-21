@@ -1,5 +1,13 @@
-# Task1
+# GitHub tool
+
+## Usage
+
 ```
-Usage: go run . $REPOSITORY_NAME
-Example: go run . Danil-Zaripov/golang-course
+# In separate terminals
+
+go run collector/cmd/main.go
+
+go run gateway/cmd/main.go
 ```
+
+Then access `localhost:50031/swagger/index.html`

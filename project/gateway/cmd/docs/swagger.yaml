@@ -1,0 +1,27 @@
+host: localhost:50031
+info:
+  contact: {}
+  description: Gets some repository data from github api
+  license:
+    name: MIT
+  title: GitHub Repo fetcher API
+  version: "1.0"
+paths:
+  /api/repo/{owner}/{name}:
+    get:
+      parameters:
+      - description: Owner
+        in: path
+        name: owner
+        required: true
+        type: string
+      - description: Name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Fetch repo information
+swagger: "2.0"
